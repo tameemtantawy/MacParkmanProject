@@ -1,7 +1,7 @@
-from django.urls import path
-from .consumers import SensorDataConsumer  # Import your WebSocket consumer
+from django.urls import re_path
+from . import consumers
 
 websocket_urlpatterns = [
-    path('ws/sensor-data/', SensorDataConsumer.as_asgi()),
+    re_path(r'ws/sensor-data/$', consumers.SensorConsumer.as_asgi()),
 ]
 

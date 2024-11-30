@@ -83,6 +83,7 @@ class LogicHandler:
         self.sensor_manager.connect_sensors()
 
     def read_xyz_data(self):
+        print(self.sensor_manager.total_x_external)
         self.sensor_manager.update_sensors()
         external_xyz = (self.sensor_manager.total_x_external, self.sensor_manager.total_y_external, self.sensor_manager.total_z_external)
         internal_xyz = (self.sensor_manager.total_x_internal, self.sensor_manager.total_y_internal, self.sensor_manager.total_z_internal)
